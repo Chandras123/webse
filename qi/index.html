@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Website Search Engine</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
   <div class="container">
-    
-    <!-- Header -->
     <header class="header">
       <h1>🌐 Simple Search Engine</h1>
       <input type="text" id="searchInput" placeholder="🔍 Type to search..." />
       <div id="results"></div>
     </header>
-
-    <!-- Content Section -->
     <section class="main">
       <h2>📄 Website Content</h2>
       <div class="content" id="content">
@@ -28,33 +16,14 @@
         </p>
       </div>
     </section>
-
-    <!-- Footer -->
     <footer class="footer">
       <p>🚀 Powered by Docker & Nginx | Created by Chandra Reddy</p>
     </footer>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
 //adding login functionality//
-<script>
-  document.getElementById('searchInput').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const content = document.getElementById('content').innerText.toLowerCase();
-    const results = document.getElementById('results');
-
-    if (query) {
-      const regex = new RegExp(query, 'gi');
-      const highlightedContent = content.replace(regex, match => `<span class="highlight">${match}</span>`);
-      results.innerHTML = highlightedContent;
-    } else {
-      results.innerHTML = '';
-    }
-  });
-</script>
-//adding username and password functionality//
 <script>
   document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -191,17 +160,14 @@
   <title>Simple Website Search Engine</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+//adding singup functionality//
 <body>
   <div class="container">
-    
-    <!-- Header -->
     <header class="header">
       <h1>🌐 Simple Search Engine</h1>
       <input type="text" id="searchInput" placeholder="🔍 Type to search..." />
       <div id="results"></div>
     </header>
-
-    <!-- Content Section -->
     <section class="main">
       <h2>📄 Website Content</h2>
       <div class="content" id="content">
@@ -213,13 +179,129 @@
         </p>
       </div>
     </section>
-
-    <!-- Footer -->
     <footer class="footer">
       <p>🚀 Powered by Docker & Nginx | Created by Chandra Reddy</p>
     </footer>
   </div>
-
   <script src="script.js"></script>
-  </body>
-</html>
+  <div class="signup-form">
+    <h2>📝 Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="newUsername" placeholder="Username" required />
+      <input type="password" id="newPassword" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const newUsername = document.getElementById('newUsername').value;
+      const newPassword = document.getElementById('newPassword').value;
+
+      // Here you can add your signup logic (e.g., API call)
+      alert(`Sign Up successful for user: ${newUsername}`);
+    });
+  </script>
+  //adding search functionality//
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const content = document.getElementById('content').innerText.toLowerCase();
+      const results = document.getElementById('results');
+
+      if (query) {
+        const regex = new RegExp(query, 'gi');
+        const highlightedContent = content.replace(regex, match => `<span class="highlight">${match}</span>`);
+        results.innerHTML = highlightedContent;
+      } else {
+        results.innerHTML = '';
+      }
+    }); 
+  </script>
+  //give me froentend of like microsft login page//
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #005a9e;
+    }
+  </style>
+  <div class="login-container">
+    <h2>🔐 Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
+      <div class="form-group">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'admin') {
+        alert('Login successful!');
+      } else {
+        alert('Invalid username or password.');
+      }
+    });
+  </script>
+</body>
