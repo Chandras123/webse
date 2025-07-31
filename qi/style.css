@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navbar button {
+  padding: 8px 14px;
+  background-color: #0e4b88;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #145ea8;
+}
+
+#loginSection input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#loginSection button {
+  padding: 10px 16px;
+  background-color: #0e4b88;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#loginSection button:hover {
+  background-color: #145ea8;
+}
+
+#latest ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+#latest li {
+  margin-bottom: 6px;
+}
+#latest li a {
+  text-decoration: none;
+  color: #0e4b88;
+}
