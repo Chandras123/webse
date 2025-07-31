@@ -1,307 +1,39 @@
-<body>
-  <div class="container">
-    <header class="header">
-      <h1>🌐 Simple Search Engine</h1>
-      <input type="text" id="searchInput" placeholder="🔍 Type to search..." />
-      <div id="results"></div>
-    </header>
-    <section class="main">
-      <h2>📄 Website Content</h2>
-      <div class="content" id="content">
-        <p>
-          Hey hi <strong>Chandra</strong>, you have successfully deployed your first beautiful application with <span class="keyword">Docker</span> and it's working perfectly! Enjoy learning DevOps and containerization in style.
-        </p>
-        <p>
-          This project is a basic demo of HTML, CSS, JavaScript, and Docker — bundled together to help you understand how front-end and back-end tools integrate.
-        </p>
-      </div>
-    </section>
-    <footer class="footer">
-      <p>🚀 Powered by Docker & Nginx | Created by Chandra Reddy</p>
-    </footer>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
-//adding login functionality//
-<script>
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === 'admin' && password === 'admin') {
-      alert('Login successful!');
-    } else {
-      alert('Invalid username or password.');
-    }
-  });
-</script>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-  }
-  .container {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  .header, .footer {
-    text-align: center;
-    padding: 10px;
-  }
-  .header h1 {
-    margin-bottom: 10px;
-  }
-  #searchInput {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  #results {
-    margin-top: 10px;
-    color: #333;
-  }
-  .highlight {
-    background-color: yellow;
-    font-weight: bold;
-  }
-  .main {
-    margin-top: 20px;
-  }
-  .content p {
-    line-height: 1.6;
-    margin: 10px 0;
-  }
-  .footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
-  }
-  .keyword {
-    color: #007bff;
-    font-weight: bold;
-  }
-  .keyword:hover {
-    text-decoration: underline;
-  }
-  .login-form {
-    margin-top: 20px;
-    text-align: center;
-  }
-  .login-form input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  .login-form button {
-    padding: 10px 15px;
-    border-radius: 4px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-  }
-  .login-form button:hover {
-    background-color: #0056b3;
-  }
-</style>
-<div class="login-form">
-  <h2>🔐 Login</h2>
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Username" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button type="submit">Login</button>
-  </form>
-</div>
-<script>
-  document.getElementById('searchInput').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const content = document.getElementById('content').innerText.toLowerCase();
-    const results = document.getElementById('results');
-
-    if (query) {
-      const regex = new RegExp(query, 'gi');
-      const highlightedContent = content.replace(regex, match => `<span class="highlight">${match}</span>`);
-      results.innerHTML = highlightedContent;
-    } else {
-      results.innerHTML = '';
-    }
-  });
-  document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === 'admin' && password === 'admin') {
-      alert('Login successful!');
-    } else {
-      alert('Invalid username or password.');
-    }
-  });
-</script>
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Website Search Engine</title>
+  <title>WebSE Chat Interface</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-//adding singup functionality//
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>🌐 Simple Search Engine</h1>
-      <input type="text" id="searchInput" placeholder="🔍 Type to search..." />
-      <div id="results"></div>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>WebSE AI Assistant</h1>
     </header>
-    <section class="main">
-      <h2>📄 Website Content</h2>
-      <div class="content" id="content">
-        <p>
-          Hey hi <strong>Chandra</strong>, you have successfully deployed your first beautiful application with <span class="keyword">Docker</span> and it's working perfectly! Enjoy learning DevOps and containerization in style.
-        </p>
-        <p>
-          This project is a basic demo of HTML, CSS, JavaScript, and Docker — bundled together to help you understand how front-end and back-end tools integrate.
-        </p>
-      </div>
-    </section>
-    <footer class="footer">
-      <p>🚀 Powered by Docker & Nginx | Created by Chandra Reddy</p>
-    </footer>
+
+    <div class="chat-window" id="chatWindow">
+      <div class="bot-message">Hello! I'm WebSE Assistant. How can I help you today?</div>
+    </div>
+
+    <form id="chatForm" class="chat-input-container">
+      <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
   </div>
+
   <script src="script.js"></script>
-  <div class="signup-form">
-    <h2>📝 Sign Up</h2>
-    <form id="signupForm">
-      <input type="text" id="newUsername" placeholder="Username" required />
-      <input type="password" id="newPassword" placeholder="Password" required />
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
-  <script>
-    document.getElementById('signupForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const newUsername = document.getElementById('newUsername').value;
-      const newPassword = document.getElementById('newPassword').value;
-
-      // Here you can add your signup logic (e.g., API call)
-      alert(`Sign Up successful for user: ${newUsername}`);
-    });
-  </script>
-  //adding search functionality//
-  <script>
-    document.getElementById('searchInput').addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      const content = document.getElementById('content').innerText.toLowerCase();
-      const results = document.getElementById('results');
-
-      if (query) {
-        const regex = new RegExp(query, 'gi');
-        const highlightedContent = content.replace(regex, match => `<span class="highlight">${match}</span>`);
-        results.innerHTML = highlightedContent;
-      } else {
-        results.innerHTML = '';
-      }
-    }); 
-  </script>
-  //give me froentend of like microsft login page//
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f4f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .login-container {
-      background-color: #ffffff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .form-group button {
-      width: 100%;
-      padding: 0.5rem;
-      background-color: #0078d4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .form-group button:hover {
-      background-color: #005a9e;
-    }
-  </style>
-  <div class="login-container">
-    <h2>🔐 Login</h2>
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required />
-      </div>
-      <div class="form-group">
-        <button type="submit">Login</button>
-      </div>
-    </form>
-  </div>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      if (username === 'admin' && password === 'admin') {
-        alert('Login successful!');
-      } else {
-        alert('Invalid username or password.');
-      }
-    });
-  </script>
 </body>
+</html>
+<script>
+  document.getElementById('chatForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const userInput = document.getElementById('userInput');
+    const chatWindow = document.getElementById('chatWindow'); 
+    const userMessage = document.createElement('div');
+    userMessage.className = 'user-message';
+    userMessage.textContent = userInput.value;
+    chatWindow.appendChild(userMessage);
+    userInput.value = '';
+  });
+</script>
