@@ -291,3 +291,83 @@
   </style>
 </body>
 </html>
+//repling for massages sent by the user//
+<script>
+  document.getElementById('chatForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const userInput = document.getElementById('userInput');
+    const chatWindow = document.getElementById('chatWindow');
+    if (userInput.value.trim() === '') return; // Prevent empty messages
+    const userMessage = document.createElement('div');
+    userMessage.className = 'user-message';
+    userMessage.textContent = userInput.value;
+    chatWindow.appendChild(userMessage);
+    userInput.value = '';
+    chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+    // Simulate a bot reply
+    const botReply = document.createElement('div');
+    botReply.className = 'bot-message';
+    botReply.textContent = "I'm still learning! 🤖 Please ask something else.";
+    chatWindow.appendChild(botReply);
+    chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+  });
+  document.getElementById('chatWindow').addEventListener('click', function(event) {
+    if (event.target.classList.contains('user-message')) {
+      event.target.remove();
+    }
+  });
+  document.getElementById('chatWindow').addEventListener('click', function(event) {
+    if (event.target.classList.contains('bot-message')) {
+      alert("I'm still learning! 🤖 Please ask something else.");
+    }
+  });
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebSE Chat Interface</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+//close the html tag//
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>WebSE AI Assistant</h1>
+    </header>
+
+    <div class="chat-window" id="chatWindow">
+      <div class="bot-message">Hello! I'm WebSE Assistant. How can I help you today?</div>
+    </div>
+
+    <form id="chatForm" class="chat-input-container">
+      <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+<script>
+    document.getElementById('chatForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const userInput = document.getElementById('userInput');
+      const chatWindow = document.getElementById('chatWindow'); 
+      const userMessage = document.createElement('div');
+      userMessage.className = 'user-message';
+      userMessage.textContent = userInput.value;
+      chatWindow.appendChild(userMessage);
+      userInput.value = '';
+      chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+    });
+    document.getElementById('chatWindow').addEventListener('click', function(event) {
+      if (event.target.classList.contains('user-message')) {
+        event.target.remove();
+      }
+    });
+    document.getElementById('chatWindow').addEventListener('click', function(event) {
+      if (event.target.classList.contains('bot-message')) {
+        alert("I'm still learning! 🤖 Please ask something else.");
+      }
+    });
+  </script>
