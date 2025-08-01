@@ -142,3 +142,152 @@
       event.target.remove();
     }
   });
+  //I'm still learning! 🤖 Please ask something else.//
+  document.getElementById('chatWindow').addEventListener('click', function(event) {
+    if (event.target.classList.contains('bot-message')) {
+      alert("I'm still learning! 🤖 Please ask something else.");
+    }
+  });
+</script>
+<style>
+  .chat-window {
+    background-color: #f8f9fa;
+  }
+  .bot-message {
+    background-color: #e2e6ea;
+  }
+  .user-message {
+    background-color: #007bff;
+    color: white;
+  }
+  .chat-input-container {
+    background-color: #f1f3f5;
+  }
+  .chat-header {
+    background-color: #343a40;
+  }
+  .chat-header h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0;
+  }
+  .chat-container {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+  }
+  .chat-window {
+    border-bottom: 1px solid #ced4da;
+  }
+  .chat-input-container input[type="text"] {
+    border: 1px solid #ced4da;
+  }
+  .chat-input-container button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+  }
+  .chat-input-container button:hover {
+    background-color: #0056b3;
+  } 
+  .chat-input-container button:disabled {
+    background-color: #007bff;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebSE Chat Interface</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1>WebSE AI Assistant</h1>
+    </header>
+
+    <div class="chat-window" id="chatWindow">
+      <div class="bot-message">Hello! I'm WebSE Assistant. How can I help you today?</div>
+    </div>
+
+    <form id="chatForm" class="chat-input-container">
+      <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('chatForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const userInput = document.getElementById('userInput');
+      const chatWindow = document.getElementById('chatWindow'); 
+      const userMessage = document.createElement('div');
+      userMessage.className = 'user-message';
+      userMessage.textContent = userInput.value;
+      chatWindow.appendChild(userMessage);
+      userInput.value = '';
+      chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+    });
+    document.getElementById('chatWindow').addEventListener('click', function(event) {
+      if (event.target.classList.contains('user-message')) {
+        event.target.remove();
+      }
+    });
+    document.getElementById('chatWindow').addEventListener('click', function(event) {
+      if (event.target.classList.contains('bot-message')) {
+        alert("I'm still learning! 🤖 Please ask something else.");
+      }
+    });
+  </script>
+  <style>
+    .chat-window {
+      background-color: #f8f9fa;
+    }
+    .bot-message {
+      background-color: #e2e6ea;
+    }
+    .user-message {
+      background-color: #007bff;
+      color: white;
+    }
+    .chat-input-container {
+      background-color: #f1f3f5;
+    }
+    .chat-header {
+      background-color: #343a40;
+    }
+    .chat-header h1 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 0;
+    }
+    .chat-container {
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+    }
+    .chat-window {
+      border-bottom: 1px solid #ced4da;
+    }
+    .chat-input-container input[type="text"] {
+      border: 1px solid #ced4da;
+    }
+    .chat-input-container button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+    }
+    .chat-input-container button:hover {
+      background-color: #0056b3;
+    }
+    .chat-input-container button:disabled {
+      background-color: #007bff;
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</body>
+</html>
